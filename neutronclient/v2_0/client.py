@@ -205,6 +205,7 @@ class Client(object):
     policy_profiles_path = "/policy_profiles"
     policy_profile_path = "/policy_profiles/%s"
     policy_profile_bindings_path = "/policy_profile_bindings"
+    config_profiles_path = "/config_profiles"
     metering_labels_path = "/metering/metering-labels"
     metering_label_path = "/metering/metering-labels/%s"
     metering_label_rules_path = "/metering/metering-label-rules"
@@ -1076,6 +1077,12 @@ class Client(object):
     def delete_network_profile(self, profile):
         """Delete the network profile."""
         return self.delete(self.network_profile_path % profile)
+
+    @APIParamsCall
+    def list_config_profiles(self, **params):
+        """Fetch a list of all configuration profiles."""
+        return self.get(self.config_profiles_path, params=params)
+
 
     @APIParamsCall
     def list_policy_profile_bindings(self, **params):

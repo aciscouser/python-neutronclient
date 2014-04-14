@@ -63,6 +63,7 @@ from neutronclient.neutron.v2_0.vpn import vpnservice
 from neutronclient.openstack.common.gettextutils import _
 from neutronclient.openstack.common import strutils
 from neutronclient.version import __version__
+from neutronclient.neutron.v2_0 import configprofiles
 
 
 VERSION = '2.0'
@@ -271,6 +272,7 @@ COMMAND_V2 = {
     'nuage-netpartition-show': netpartition.ShowNetPartition,
     'nuage-netpartition-create': netpartition.CreateNetPartition,
     'nuage-netpartition-delete': netpartition.DeleteNetPartition,
+    'cisco-dfa-config-profile-list': configprofiles.ListConfigProfiles,
 }
 
 COMMANDS = {'2.0': COMMAND_V2}
